@@ -10,7 +10,7 @@
 class Solution {
 
     public int findMiddleIndex(int lo, int hi, int[] nums) {
-
+        
         if (nums.length == 1) {
             return nums[0];
         }
@@ -18,8 +18,11 @@ class Solution {
         if (nums[hi] > nums[0]) {
             return nums[0];
         }
+        
+        lo--;
+        hi++;
 
-        while (lo < hi) {
+        while (lo + 1 < hi) {
             int mid = lo + (hi - lo) / 2;
 
             if (nums[mid + 1] < nums[mid]) {
